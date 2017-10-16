@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css?family=Modak');
+.panel {
+  height: 100%;
+}
+
+.border-right {
+  border-right: solid black;
+}
+
+.section-title {
+  font-family: 'Modak', cursive;
+}
+
+#todo-list, #progress-list, #done-list {
+  height: 100%;
+}
+
+.lvl1 {
+  background-color: #f4ee42;
+}
+
+.lvl2 {
+  background-color: #d0f441;
+}
+
+.lvl3 {
+  background-color: #aff441;
+}
+
+.lvl4 {
+  background-color: #41f476;
+}
+
+.lvl5 {
+  background-color: #46bef2;
+}
+
+.lvl6 {
+  background-color: #f4ee42;
+}
+
+.lvl7 {
+  background-color: #f4ee42;
+}
+
+.lvl8 {
+  background-color: #f4ee42;
+}
+
+.lvl9 {
+  background-color: #f4ee42;
+}
+
+.lvl10 {
+  background-color: #f4071b;
+  /*  background: -webkit-linear-gradient(-45deg, #ffff88 81%,#ffff88 82%,#ffff88 82%,#ffffc6 100%); /* Chrome10+,Safari5.1+ */
+}
+
+.postit {
+  line-height: 1;
+  text-align: center;
+  width: 275px;
+  min-height: 250px;
+  max-height: 250px;
+  padding-top: 35px;
+  position: relative;
+  border: 1px solid #E8E8E8;
+  font-family: 'Reenie Beanie';
+  font-size: 22px;
+  border-bottom-right-radius: 60px 5px;
+  display: inline-block;
+}
+
+.settings {
+  cursor: pointer;
+  position: absolute;
+  top: 5px;
+  right: 10px;
+  width: 18px;
+  height: 16px;
+}

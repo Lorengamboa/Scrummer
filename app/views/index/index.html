@@ -1,0 +1,40 @@
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Scrum App</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/dragula/3.7.2/dragula.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="./index.css">
+</head>
+
+<body>
+    <div class="row">
+      <div class="col s4 panel border-right">
+        <div class="container">
+          <h4 class="section-title center-align">TO DO</h4>
+          <div class="row" id="todo-list"></div>
+        </div>
+
+      </div>
+      <div class="col s4 panel border-right">
+        <h4 class="section-title center-align">IN PROGRESS</h4>
+        <div class="row" id="progress-list"></div>
+      </div>
+      <div class="col s4 panel">
+        <h4 class="section-title center-align">DONE</h4>
+        <div class="row" id="done-list"></div>
+      </div>
+    </div>
+  <div id="create-note" class="fixed-action-btn" style="bottom: 45px; right: 24px;">
+    <a class="btn-floating btn-large red">
+        <i class="material-icons">note_add</i>
+    </a>
+  </div>
+
+<script src='https://cdnjs.cloudflare.com/ajax/libs/dragula/3.7.2/dragula.js'></script>
+<script src='./index.js'></script>
+</body>
+
+</html>

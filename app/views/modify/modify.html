@@ -1,0 +1,38 @@
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Scrum App</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+
+<body>
+  <div class="container">
+    <div class="row">
+      <form>
+        <h3 class="center-align">Title</h3>
+        <input id="title" />
+        <h3 class="center-align">Content</h3>
+        <input id="content" />
+        <h3 class="center-align">Priority</h3>
+        <p class="range-field">
+          <input id="priority" type="range" min="1" max="10" />
+        </p>
+        <p class="center-align">
+          <button id="update" class="waves-effect waves-light btn" type="submit">
+            Modify
+          </button>
+        </p>
+      </form>
+      <p class="center-align">
+        <button id="delete" class="waves-effect red btn">
+          Delete
+        </button>
+      </p>
+    </div>
+  </div>
+  <script src='./index.js'></script>
+</body>
+
+</html>
