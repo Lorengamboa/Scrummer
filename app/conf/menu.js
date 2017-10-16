@@ -19,11 +19,7 @@ const main_menu = [{
       }
     },
     {
-      label: 'Quit',
-      accelerator: process.platform === 'darwin' ? SHORCUT_QUIT_IOS : SHORCUT_QUIT_WN,
-      click() {
-        app.quit();
-      }
+      role: 'quit'
     }
   ]
 }]
