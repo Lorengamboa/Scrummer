@@ -1,6 +1,8 @@
 "use strict";
 
-const { openCreateNoteWindow } = require('../utils/windows');
+const {
+  openCreateNoteWindow
+} = require('../utils/windows');
 const {
   SHORCUT_QUIT_IOS,
   SHORCUT_QUIT_WN,
@@ -19,6 +21,8 @@ const main_menu = [{
       }
     },
     {
+      label: 'Quit',
+      accelerator: process.platform === 'darwin' ? SHORCUT_QUIT_IOS : SHORCUT_QUIT_WN,
       role: 'quit'
     }
   ]
@@ -27,8 +31,9 @@ const main_menu = [{
 // Menu developer mode
 const menu_dev = {
   label: 'View',
-  submenu: [
-    { role: 'reload' },
+  submenu: [{
+      role: 'reload'
+    },
     {
       label: 'Toogle developer tools',
       accelerator: process.platform === 'darwin' ? SHORCUT_CONSOLE_IOS : SHORCUT_CONSOLE_WN,

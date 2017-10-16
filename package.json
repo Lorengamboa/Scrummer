@@ -1,7 +1,7 @@
 {
   "name": "Electron-scrum",
   "version": "1.0.0",
-  "description": "",
+  "description": "Scrummer is a desktop application for enhancing your productivity.",
   "main": "index.js",
   "scripts": {
     "electron": "electron ."
