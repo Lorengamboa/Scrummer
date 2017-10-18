@@ -1,14 +1,23 @@
 {
-  "name": "Electron-scrum",
+  "name": "Scrummer",
   "version": "1.0.0",
   "description": "Scrummer is a desktop application for enhancing your productivity.",
   "main": "index.js",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Lorengamboa/Scrummer.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Lorengamboa/Scrummer/issues"
+  },
+  "homepage": "https://github.com/Lorengamboa/Scrummer#readme",
   "scripts": {
     "electron": "electron ."
   },
   "keywords": [],
   "author": "",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
     "electron": "^1.7.9"
   }

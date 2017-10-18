@@ -27,7 +27,7 @@ app.on('ready', () => {
   const mainMenu = Menu.buildFromTemplate(main_menu);
   Menu.setApplicationMenu(mainMenu);
 
-  const iconName = process.platform === 'win32' ? 'tray.ico' : 'tray.ico';
+  const iconName = process.platform === 'win32' ? 'tray.ico' : 'tray.png';
   const iconPath = path.join(__dirname, `./app/assets/img/ico/${iconName}`);
   tray = new Tray(iconPath);
 });
