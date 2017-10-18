@@ -4,29 +4,25 @@
 const path = require('path');
 const electron = require('electron');
 const Store = require('./app/utils/store');
-const { openCreateNoteWindow, openModifyNoteWindow, updatesMainWindow } = require('./app/utils/windows');
-const { mainWindowSettings, createWindowSettings, modifyWindowSettings } = require('./app/conf/windows');
-const { DIR_MAIN_HTML, DIR_CREATE_HTML, DIR_MODIFY_HTML, NAME_DB_NOTES } = require('./app/conf/constants');
-const { main_menu, menu_dev } = require('./app/conf/menu');
-const { app, BrowserWindow, ipcMain, Menu, Tray } = electron;
+const MainWindow = require('./app');
 
-let mainWindow, createWindow, modifyWindow; // Windows available
+const { app, BrowserWindow, ipcMain, Menu, Tray } = electron;
+const { openCreateNoteWindow, openModifyNoteWindow, updatesMainWindow } = require('./app/utils/windows');
+const { createWindowSettings, modifyWindowSettings } = require('./app/conf/windows');
+const { DIR_MAIN_HTML, DIR_CREATE_HTML, DIR_MODIFY_HTML, NAME_DB_NOTES } = require('./app/conf/constants');
+const { storeSettings } = require('./app/conf/general');
+const { main_menu, menu_dev } = require('./app/conf/menu');
+
+let mainWindow, createWindow, modifyWindow; // Windows
 let tray;
 
 // Store variable
-let store = new Store({
-    configName: NAME_DB_NOTES,
-    defaults: []
-  });
+let store = new Store(storeSettings);
 
 // Once app is ready
 app.on('ready', () => {
-  mainWindow = new BrowserWindow(mainWindowSettings);
+  mainWindow = new MainWindow(`file://${__dirname}${DIR_MAIN_HTML}`);
   mainWindow.initialNotes = store.getAll();
-  mainWindow.maximize();
-  mainWindow.loadURL(`file://${__dirname}${DIR_MAIN_HTML}`);
-  mainWindow.on('closed', () => closeApp()); // If main window is closed,
-                                            // the entire app will shutdown
 
   const mainMenu = Menu.buildFromTemplate(main_menu);
   Menu.setApplicationMenu(mainMenu);

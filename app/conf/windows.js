@@ -1,7 +1,11 @@
 "use strict";
 
 // General settings for the main window
-exports.mainWindowSettings = {}
+exports.mainWindowSettings = {
+  webPreferences: {
+    backgroundThrottling: false
+  }
+}
 
 // General settings for create new note window
 exports.createWindowSettings = {

@@ -2,36 +2,11 @@
 
   // Imports needed modules
   const electron = require('electron');
-  const {
-    ipcRenderer,
-    remote
-  } = electron;
-  const {
-    initialNotes
-  } = remote.getCurrentWindow();
+  const { ipcRenderer, remote } = electron;
+  const { initialNotes } = remote.getCurrentWindow();
 
   var btn_settings = document.getElementsByClassName("settings");
-
-  //
-  updateNotes(initialNotes);
-
-  // Opens create note window
-  document.getElementById('create-note').addEventListener('click', (ev) => {
-    ipcRenderer.send('open-window:create', () => {});
-  });
-
-  for (var i = 0; i < btn_settings.length; i++) {
-    btn_settings[i].addEventListener('click', openModifyWindow, false);
-  }
-
-  // Updates the notes, propably becouse of a crud operation
-  ipcRenderer.on('update:notes', (ev, notes) => {
-    updateNotes(notes);
-  });
-
-
-  var drake =
-    dragula([document.querySelector('#todo-list'),
+  var drake = dragula([document.querySelector('#todo-list'),
       document.querySelector('#progress-list'),
       document.querySelector('#done-list')
     ], {
@@ -43,6 +18,20 @@
       mirrorContainer: document.body,
       ignoreInputTextSelection: true
     });
+
+  // Updates screen
+  updateNotes(initialNotes);
+
+  // Opens create note window
+  document.getElementById('create-note').addEventListener('click', (ev) => {
+    ipcRenderer.send('open-window:create', () => {});
+  });
+
+  // Updates the notes, propably becouse of a crud operation
+  ipcRenderer.on('update:notes', (ev, notes) => {
+    updateNotes(notes);
+  });
+
 
   drake.on('drop', (el, target, source, sibling) => {
     //console.log("dropped!",el,target,source,sibling);
@@ -68,12 +57,9 @@
     setStateCard(idcard, nstate);
   });
 
-  //
+  // Updates the state of a card ['todo', 'progress', 'done']
   function setStateCard(index, nState) {
-    var details = {
-      index,
-      nState
-    };
+    var details = { index, nState };
     ipcRenderer.send('card:updatestate', (details));
   }
 
@@ -83,6 +69,10 @@
     initialNotes.forEach((el, index) => {
       addStickNote(el, index);
     });
+    // Iterates over all the setting buttons and adds them a event listener
+    for (var i = 0; i < btn_settings.length; i++) {
+      btn_settings[i].addEventListener('click', openModifyWindow, false);
+    }
   }
 
   // Cleans all the notes

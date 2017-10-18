@@ -1,7 +1,7 @@
 "use strict";
 
-const { DIR_CREATE_HTML, DIR_MODIFY_HTML } = require('../conf/constants');
 const { BrowserWindow } = require('electron');
+const { DIR_CREATE_HTML, DIR_MODIFY_HTML } = require('../conf/constants');
 
 /**
  * Opens the create note window

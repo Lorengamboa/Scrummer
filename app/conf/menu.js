@@ -1,8 +1,6 @@
 "use strict";
 
-const {
-  openCreateNoteWindow
-} = require('../utils/windows');
+const { openCreateNoteWindow } = require('../utils/windows');
 const {
   SHORCUT_QUIT_IOS,
   SHORCUT_QUIT_WN,

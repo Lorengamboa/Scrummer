@@ -4,9 +4,9 @@
 // https://gist.github.com/ccnokes/95cb454860dbf8577e88d734c3f31e08#file-store-js
 
 // Import modules
-const electron = require('electron');
 const path = require('path');
 const fs = require('fs');
+const electron = require('electron');
 
 class Store {
   constructor(opts) {
