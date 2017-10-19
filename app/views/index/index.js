@@ -78,6 +78,8 @@
   // Cleans all the notes
   function cleanNotes() {
     document.getElementById('todo-list').innerHTML = "";
+    document.getElementById('progress-list').innerHTML = "";
+    document.getElementById('done-list').innerHTML = "";
   }
 
   // Adds an single note to the screen

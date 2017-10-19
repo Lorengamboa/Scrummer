@@ -66,7 +66,7 @@ ipcMain.on('card:updatestate', (event, details) => {
 ipcMain.on('note:delete', (event, id) => {
   // Adds new note object to the db
   store.delete(id);
-  //updatesMainWindow()
+  updatesMainWindow(mainWindow, store)
 });
 
 //  Cross platform, darwin is what ios is build upon on
