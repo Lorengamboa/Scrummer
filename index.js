@@ -3,8 +3,9 @@
 // Import modules
 const path = require('path');
 const electron = require('electron');
-const Store = require('./app/utils/store');
 const MainWindow = require('./app');
+const Store = require('./app/utils/store');
+const MainTray = require('./app/utils/tray');
 
 const { app, BrowserWindow, ipcMain, Menu, Tray } = electron;
 const { openCreateNoteWindow, openModifyNoteWindow, updatesMainWindow } = require('./app/utils/windows');
@@ -14,7 +15,7 @@ const { storeSettings } = require('./app/conf/general');
 const { main_menu, menu_dev } = require('./app/conf/menu');
 
 let mainWindow, createWindow, modifyWindow; // Windows
-let tray;
+let mainTray;
 
 // Store variable
 let store = new Store(storeSettings);
@@ -27,9 +28,9 @@ app.on('ready', () => {
   const mainMenu = Menu.buildFromTemplate(main_menu);
   Menu.setApplicationMenu(mainMenu);
 
-  const iconName = process.platform === 'win32' ? 'tray.ico' : 'tray.png';
+  const iconName = process.platform === 'win32' ? 'icon.ico' : 'icon.png';
   const iconPath = path.join(__dirname, `./app/assets/img/ico/${iconName}`);
-  tray = new Tray(iconPath);
+  mainTray = new MainTray(iconPath, mainWindow);
 });
 
 // Listens to the ipc and opens the create note window
@@ -77,11 +78,4 @@ if (process.platform === 'darwin') {
 // show developer tool if we are not in productions stage
 if ( process.env.NODE_ENV !== 'production') {
   main_menu.push(menu_dev)
-}
-
-/**
- * Shutdowns the whole application
- */
-function closeApp() {
-  app.quit();
 }

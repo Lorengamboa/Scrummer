@@ -1,5 +1,6 @@
 "use strict";
 
+const { Menu } = require('electron');
 const { openCreateNoteWindow } = require('../utils/windows');
 const {
   SHORCUT_QUIT_IOS,
@@ -42,6 +43,15 @@ const menu_dev = {
   ]
 }
 
+// Tray menu
+const tray_menu = Menu.buildFromTemplate([
+  {
+    label: 'Quit',
+    role: 'quit'
+  }
+]);
+
 
 module.exports.main_menu = main_menu;
 module.exports.menu_dev = menu_dev;
+module.exports.tray_menu = tray_menu;
