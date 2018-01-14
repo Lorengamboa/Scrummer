@@ -1,6 +1,8 @@
 # Scrummer
 Scrummer is a desktop application for enhancing your productivity.
 
+![Alt Text](./assets/preview.gif)
+
 ## Index
 1. [Requirements](#requirements)
 2. [How to install](#install)

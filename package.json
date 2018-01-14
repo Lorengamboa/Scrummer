@@ -13,7 +13,7 @@
   },
   "homepage": "https://github.com/Lorengamboa/Scrummer#readme",
   "scripts": {
-    "electron": "electron .",
+    "start": "electron .",
     "package-mac": "electron-packager . Scrummer --overwrite --platform=darwin --arch=x64 --icon=app/assets/img/ico/icon.icns --out=release-builds",
     "package-win": "electron-packager . Scrummer --overwrite --asar=true --platform=win32 --arch=ia32 --icon=app/assets/img/ico/icon.ico --out=release-builds",
     "package-linux": "electron-packager . Scrummer --overwrite --asar=true --platform=linux --arch=x64 --icon=app/assets/img/ico/icon.png --out=release-builds",
