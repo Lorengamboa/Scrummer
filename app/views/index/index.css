@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Modak');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans|Sedgwick+Ave+Display');
 .panel {
   height: 100%;
 }
@@ -8,7 +8,7 @@
 }
 
 .section-title {
-  font-family: 'Modak', cursive;
+  font-family: 'Open Sans', sans-serif;
 }
 
 #todo-list, #progress-list, #done-list {
@@ -16,47 +16,47 @@
 }
 
 .lvl1 {
-  background-color: #f4ee42;
+  border-top-color: #f44260 !important;
 }
 
 .lvl2 {
-  background-color: #d0f441;
+  border-top-color: #d041f4 !important;
 }
 
 .lvl3 {
-  background-color: #aff441;
+  border-top-color: #ca41f4 !important;
 }
 
 .lvl4 {
-  background-color: #41f476;
+  border-top-color: rgb(68, 65, 244) !important;
 }
 
 .lvl5 {
-  background-color: #46bef2;
+  border-top-color: #46bef2 !important;
 }
 
 .lvl6 {
-  background-color: #f4ee42;
+  border-top-color: #42f45a !important;
 }
 
 .lvl7 {
-  background-color: #f4ee42;
+  border-top-color: #42f460 !important;
 }
 
 .lvl8 {
-  background-color: #f4ee42;
+  border-top-color: #7af442 !important;
 }
 
 .lvl9 {
-  background-color: #f4ee42;
+  border-top-color: #f4ca42 !important;
 }
 
 .lvl10 {
-  background-color: #f4071b;
-  /*  background: -webkit-linear-gradient(-45deg, #ffff88 81%,#ffff88 82%,#ffff88 82%,#ffffc6 100%); /* Chrome10+,Safari5.1+ */
+  border-top-color: #f4071b !important;
 }
 
 .postit {
+  background-color: #fdffcc;
   line-height: 1;
   text-align: center;
   width: 275px;
@@ -65,7 +65,8 @@
   padding-top: 35px;
   position: relative;
   border: 1px solid #E8E8E8;
-  font-family: 'Reenie Beanie';
+  border-top: 5px solid;
+  font-family: 'Sedgwick Ave Display';
   font-size: 22px;
   border-bottom-right-radius: 60px 5px;
   display: inline-block;

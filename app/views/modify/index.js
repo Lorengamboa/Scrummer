@@ -15,11 +15,13 @@
   document.querySelector('form').addEventListener('submit', (event) => {
     event.preventDefault(); // Prevents from submitting itself
     const inputs = document.getElementsByTagName('input');
+    const ta = document.getElementsByTagName('textarea');
+
     const details = {
       'id': note_id,
       'title': inputs[0].value,
-      'content': inputs[1].value,
-      'priority': inputs[2].value
+      'content': ta[0].value,
+      'priority': inputs[1].value
     }
     ipcRenderer.send('note:modify', details);
   });

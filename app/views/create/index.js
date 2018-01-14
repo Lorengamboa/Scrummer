@@ -8,11 +8,12 @@
     event.preventDefault(); // Prevents from submitting itself
 
     const inputs = document.getElementsByTagName('input');
+    const ta = document.getElementsByTagName('textarea');
     // Populates details object with the note specifications
     const details = {
       'title': inputs[0].value,
-      'content': inputs[1].value,
-      'priority': inputs[2].value,
+      'content': ta[0].value,
+      'priority': inputs[1].value,
       'state': 'todo'
     }
 
