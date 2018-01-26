@@ -1,6 +1,9 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans|Sedgwick+Ave+Display');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans|Playfair+Display|Sedgwick+Ave+Display');
+
 .panel {
   height: 100%;
+  margin-top: 2em;
 }
 
 .border-right {
@@ -8,7 +11,7 @@
 }
 
 .section-title {
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Playfair Display', serif;
 }
 
 #todo-list, #progress-list, #done-list {
@@ -60,16 +63,24 @@
   line-height: 1;
   text-align: center;
   width: 275px;
-  min-height: 250px;
-  max-height: 250px;
+  height: 150px;
   padding-top: 35px;
   position: relative;
   border: 1px solid #E8E8E8;
   border-top: 5px solid;
-  font-family: 'Sedgwick Ave Display';
   font-size: 22px;
   border-bottom-right-radius: 60px 5px;
   display: inline-block;
+  overflow: hidden;
+}
+
+.stk-title {
+  font-family: 'Sedgwick Ave Display';
+}
+
+.stk-content {
+  font-family: 'fantasy';
+  font-size: 20px;
 }
 
 .settings {
@@ -79,4 +90,10 @@
   right: 10px;
   width: 18px;
   height: 16px;
+  transition: all 0.3s ease-in-out 0s;
+}
+
+.settings:hover {
+  transform: rotate(180deg);
+  transition: all 0.3s ease-in-out 0s;
 }

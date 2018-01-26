@@ -91,9 +91,11 @@
     i.appendChild(document.createTextNode("settings"));
     i.className = "tiny material-icons settings";
 
-    const title = document.createElement('li');
+    const title = document.createElement('p');
     title.appendChild(document.createTextNode(details.title));
-    const content = document.createElement('li');
+    title.className = "stk-title";
+    const content = document.createElement('p');
+    content.className = "stk-content";
     content.appendChild(document.createTextNode(details.content));
 
     ul.appendChild(title);

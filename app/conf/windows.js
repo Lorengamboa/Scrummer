@@ -15,10 +15,3 @@ exports.createWindowSettings = {
   resizable: false
 }
 
-// General settings for modify window
-exports.createWindowSettings = {
-  width: 500,
-  height: 800,
-  title: 'New note',
-  resizable: false
-}

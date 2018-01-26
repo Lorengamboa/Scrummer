@@ -1,6 +1,7 @@
 "use strict";
 
-const { Menu } = require('electron');
+const { Menu, BrowserWindow } = require('electron');
+const { createWindowSettings } = require('../conf/windows');
 const { openCreateNoteWindow } = require('../utils/windows');
 const {
   SHORCUT_QUIT_IOS,
@@ -10,13 +11,14 @@ const {
 } = require('./constants');
 
 // Menu core properties
-const main_menu = [{
-  label: 'options',
-  submenu: [{
+const main_menu =  [{
+    label: 'options',
+    submenu: [{
       label: 'Create a new note',
       accelerator: process.platform === 'darwin' ? 'Command+N' : 'Ctrl+N',
       click() {
-        openCreateNoteWindow();
+        var createWindow = new BrowserWindow(createWindowSettings);
+        openCreateNoteWindow(createWindow);
       }
     },
     {
@@ -24,22 +26,22 @@ const main_menu = [{
       accelerator: process.platform === 'darwin' ? SHORCUT_QUIT_IOS : SHORCUT_QUIT_WN,
       role: 'quit'
     }
-  ]
-}]
+    ]
+  }]
 
 // Menu developer mode
 const menu_dev = {
   label: 'View',
   submenu: [{
-      role: 'reload'
-    },
-    {
-      label: 'Toogle developer tools',
-      accelerator: process.platform === 'darwin' ? SHORCUT_CONSOLE_IOS : SHORCUT_CONSOLE_WN,
-      click(item, focusedWindow) {
-        focusedWindow.toggleDevTools();
-      }
+    role: 'reload'
+  },
+  {
+    label: 'Toogle developer tools',
+    accelerator: process.platform === 'darwin' ? SHORCUT_CONSOLE_IOS : SHORCUT_CONSOLE_WN,
+    click(item, focusedWindow) {
+      focusedWindow.toggleDevTools();
     }
+  }
   ]
 }
 

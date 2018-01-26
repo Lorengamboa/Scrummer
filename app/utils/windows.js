@@ -8,7 +8,7 @@ const { DIR_CREATE_HTML, DIR_MODIFY_HTML } = require('../conf/constants');
  */
 exports.openCreateNoteWindow = (window) => {
   window.loadURL(`file://${__dirname}${DIR_CREATE_HTML}`);
-  window.on('closed', () => window = null); //Garbage Collection, save memory
+  window.on('closed', () => window = null); // Garbage Collection, save memory
 }
 
 /**

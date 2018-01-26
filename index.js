@@ -54,6 +54,17 @@ app.on('ready', () => {
   const iconName = process.platform === 'win32' ? 'icon.ico' : 'icon.png';
   const iconPath = path.join(__dirname, `./app/assets/img/ico/${iconName}`);
   mainTray = new MainTray(iconPath, mainWindow);
+
+  //  Cross platform, darwin is what ios is build upon on
+  if (process.platform === 'darwin') {
+    main_menu.unshift({});
+  }
+
+  // show developer tool if we are not in productions stage
+  if (process.env.NODE_ENV !== 'production') {
+    main_menu.push(menu_dev)
+  }
+
 });
 
 // Listens to the ipc and opens the create note window
@@ -97,13 +108,3 @@ ipcMain.on('card:updatestate', (event, details) => {
   store.updateCardState(details);
   //updatesMainWindow()
 });
-
-//  Cross platform, darwin is what ios is build upon on
-if (process.platform === 'darwin') {
-  main_menu.unshift({});
-}
-
-// show developer tool if we are not in productions stage
-if (process.env.NODE_ENV !== 'production') {
-  main_menu.push(menu_dev)
-}
